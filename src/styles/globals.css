@@ -70,3 +70,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+.container {
+  @apply max-w-[1400px] mx-auto;
+}
+
+section {
+  @apply py-8 md:py-12;
+}

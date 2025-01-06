@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Header from "@/components/Header";
-import { Button } from "@/components/ui/button";
+import { Button, type ButtonVariant } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -24,33 +24,35 @@ export default function Home() {
         <Header />
         
         {/* Hero Section */}
-        <section className="relative py-20 overflow-hidden">
+        <section className="relative py-12 md:py-16 lg:py-20 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background"></div>
           <div className="container relative z-10 mx-auto px-4 text-center">
-            <Badge variant="secondary" className="mb-4 animate-bounce">
+            <Badge className="mb-4 animate-bounce">
               🚀 4.98 Stars (3,234+ Reviews) ⭐️
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
               Welcome to{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
                 Frugal Season
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8">
+            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Join our elite community of deal hunters and start earning an extra $1,000+/month 
               finding hidden clearance deals, price errors, and retail arbitrage opportunities! 🎯
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <Button 
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
                 asChild
               >
                 <a href="https://whop.com/frugal-szn-1/?a=digitalartlab">
                   Join Frugal Season Now (Limited Spots) 🚀
                 </a>
               </Button>
-              <Button variant="outline" size="lg" asChild>
+              <Button 
+                variant={"outline" as ButtonVariant}
+                asChild
+              >
                 <a href="#features">
                   See How It Works ⚡️
                 </a>
@@ -63,18 +65,17 @@ export default function Home() {
         </section>
 
         {/* Success Stories with Videos */}
-        <section className="py-20 bg-muted/50">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+        <section className="py-8 md:py-12 bg-muted/50">
+          <div className="container mx-auto px-2 md:px-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-3 md:mb-4">
               Real Results from Our Community
             </h2>
-            <p className="text-xl text-muted-foreground text-center max-w-3xl mx-auto mb-12">
+            <p className="text-base md:text-lg lg:text-xl text-muted-foreground text-center max-w-3xl mx-auto mb-6 md:mb-8">
               Watch how our members are finding incredible deals and making serious profits
             </p>
             <VideoCarousel />
-            <div className="text-center mt-12">
+            <div className="text-center mt-8 md:mt-10">
               <Button 
-                size="lg"
                 className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
                 asChild
               >
@@ -87,7 +88,7 @@ export default function Home() {
         </section>
 
         {/* Problems Section */}
-        <section className="py-20 bg-muted/50">
+        <section className="py-12 md:py-16 bg-muted/50">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
               😩 Are You Tired of These Struggles? 😩
@@ -131,7 +132,6 @@ export default function Home() {
             </div>
             <div className="text-center mt-12">
               <Button 
-                size="lg"
                 className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
                 asChild
               >
@@ -144,12 +144,12 @@ export default function Home() {
         </section>
 
         {/* Solution Section */}
-        <section className="py-20">
+        <section className="py-12 md:py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
               Introducing Frugal Season: Your Path to Financial Freedom
             </h2>
-            <p className="text-xl text-muted-foreground text-center max-w-3xl mx-auto mb-12">
+            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground text-center max-w-3xl mx-auto mb-12">
               We've built a robust community + platform designed to empower you with the tools to find and capitalize on hidden deals, price errors, and other money-making opportunities.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -196,9 +196,7 @@ export default function Home() {
             </div>
             <div className="text-center mt-12">
               <Button 
-                size="lg"
-                variant="outline"
-                className="bg-background"
+                variant={"outline" as ButtonVariant}
                 asChild
               >
                 <a href="https://whop.com/frugal-szn-1/?a=digitalartlab">
@@ -210,12 +208,12 @@ export default function Home() {
         </section>
 
         {/* Revenue Streams */}
-        <section className="py-20">
+        <section className="py-12 md:py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
               More Than Just Price Errors
             </h2>
-            <p className="text-xl text-muted-foreground text-center max-w-3xl mx-auto mb-12">
+            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground text-center max-w-3xl mx-auto mb-12">
               Discover multiple ways to generate income with our comprehensive platform
             </p>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
@@ -239,9 +237,7 @@ export default function Home() {
             </div>
             <div className="text-center mt-12">
               <Button 
-                size="lg"
-                variant="outline"
-                className="bg-background"
+                variant={"outline" as ButtonVariant}
                 asChild
               >
                 <a href="https://whop.com/frugal-szn-1/?a=digitalartlab">
@@ -253,7 +249,7 @@ export default function Home() {
         </section>
 
         {/* How It Works */}
-        <section className="py-20 bg-muted/50">
+        <section className="py-12 md:py-16 bg-muted/50">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
               Get Started in 3 Easy Steps
@@ -289,7 +285,6 @@ export default function Home() {
             </div>
             <div className="text-center mt-12">
               <Button 
-                size="lg"
                 className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
                 asChild
               >
@@ -302,21 +297,19 @@ export default function Home() {
         </section>
 
         {/* Founder Story */}
-        <section className="py-20">
+        <section className="py-12 md:py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
                 The Frugal Season Story: Built By Someone Who's Been There
               </h2>
-              <blockquote className="text-xl italic text-muted-foreground mb-8">
+              <blockquote className="text-lg md:text-xl lg:text-2xl italic text-muted-foreground mb-8">
                 "I spent hours shopping the clearance rack in search of brand name clothing just to fit in. That drive for finding bargains never left me. We launched Frugal Season to change the way you shop. Forever."
               </blockquote>
             </div>
             <div className="text-center mt-12">
               <Button 
-                size="lg"
-                variant="outline"
-                className="bg-background"
+                variant={"outline" as ButtonVariant}
                 asChild
               >
                 <a href="https://whop.com/frugal-szn-1/?a=digitalartlab">
@@ -328,7 +321,7 @@ export default function Home() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20 bg-muted/50">
+        <section className="py-12 md:py-16 bg-muted/50">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
               Frequently Asked Questions
@@ -359,12 +352,12 @@ export default function Home() {
         </section>
 
         {/* Pricing Section */}
-        <section className="py-20">
+        <section className="py-12 md:py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
               Choose Your Path to Success
             </h2>
-            <p className="text-xl text-muted-foreground text-center max-w-3xl mx-auto mb-12">
+            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground text-center max-w-3xl mx-auto mb-12">
               Start your journey to financial freedom today
             </p>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -412,16 +405,15 @@ export default function Home() {
         </section>
 
         {/* Final CTA */}
-        <section className="py-20">
+        <section className="py-12 md:py-16">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-8">
               Ready to Start Making Extra Income?
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Join Frugal Season today and become a member of a community that helps you take steps toward financial freedom.
             </p>
             <Button 
-              size="lg"
               className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
               asChild
             >

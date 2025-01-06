@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import Logo from './Logo';
 import { ThemeToggle } from './ThemeToggle';
 import { Button } from './ui/button';
+import Link from "next/link"
 
 const Header = () => {
   const router = useRouter();
@@ -20,22 +21,22 @@ const Header = () => {
         </div>
         <div className="flex items-center gap-4">
           <nav className="hidden md:flex items-center gap-6">
-            <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
+            <Link href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
               Features
-            </a>
-            <a href="#testimonials" className="text-muted-foreground hover:text-foreground transition-colors">
+            </Link>
+            <Link href="#testimonials" className="text-muted-foreground hover:text-foreground transition-colors">
               Reviews
-            </a>
-            <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">
+            </Link>
+            <Link href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">
               Pricing
-            </a>
+            </Link>
           </nav>
           <Button 
             variant="outline"
             className="hidden sm:flex"
             asChild
           >
-            <a href="#features">Explore Features ✨</a>
+            <Link href="#features">Explore Features ✨</Link>
           </Button>
           <Button 
             className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"

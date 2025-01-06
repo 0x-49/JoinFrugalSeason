@@ -1,9 +1,15 @@
 "use client"
 
-import React from 'react';
+import * as React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
-const videos = [
+interface Video {
+  url: string;
+  title: string;
+  description: string;
+}
+
+const videos: Video[] = [
   {
     url: 'https://streamable.com/e/3v6v2k?',
     title: 'Frugal Season Secret: $25 Dewalt Chargers for ONE PENNY!',
@@ -46,35 +52,38 @@ const videos = [
   }
 ];
 
-export default function VideoCarousel() {
+const VideoCarousel: React.FC = () => {
   return (
-    <div className="w-full max-w-6xl mx-auto px-4">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <section className="py-16 px-4 md:px-6 lg:px-8">
+      <h2 className="text-3xl font-bold text-center mb-12">🎥 Latest Money-Saving Deals</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {videos.map((video, index) => (
-          <Card key={index} className="flex flex-col h-full bg-background hover:shadow-xl transition-all duration-300">
-            <div className="relative w-full pt-[177.778%] rounded-t-xl overflow-hidden">
+          <Card key={index} className="flex flex-col bg-background hover:shadow-xl transition-all duration-300">
+            <div className="aspect-[9/16] w-full">
               <iframe
                 src={video.url}
-                className="absolute top-0 left-0 w-full h-full"
+                width="100%"
+                height="100%"
+                frameBorder="0"
                 allowFullScreen
-                allow="autoplay"
-                style={{ border: 'none' }}
+                className="rounded-lg"
+                title={`Video ${index + 1}`}
               />
             </div>
-            <CardHeader className="flex-grow">
-              <CardTitle className="text-lg font-bold leading-tight">
+            <CardHeader className="flex-grow p-6">
+              <CardTitle className="text-xl font-bold leading-tight mb-3">
                 {video.title}
               </CardTitle>
-              <CardDescription className="mt-2 text-sm">
+              <CardDescription className="text-base">
                 {video.description}
               </CardDescription>
             </CardHeader>
-            <CardContent className="pt-0">
-              <div className="flex items-center text-sm text-muted-foreground">
-                <span className="flex items-center">
+            <CardContent className="p-6 pt-0">
+              <div className="flex items-center text-base">
+                <span className="flex items-center font-medium text-muted-foreground">
                   💰 Potential Profit
                 </span>
-                <span className="ml-auto text-green-500 font-semibold">
+                <span className="ml-auto text-green-500 font-bold">
                   {index === 0 ? '$24.99/item' : 
                    index === 1 ? '$12.80/item' :
                    index === 2 ? '$239.99/item' :
@@ -89,6 +98,8 @@ export default function VideoCarousel() {
           </Card>
         ))}
       </div>
-    </div>
+    </section>
   );
-}
+};
+
+export default VideoCarousel;
