@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const config = {
+module.exports = {
   content: [
     './src/**/*.{js,ts,jsx,tsx,mdx}',
     './src/pages/**/*.{ts,tsx}',
@@ -94,5 +94,3 @@ const config = {
   },
   plugins: [require("tailwindcss-animate")],
 }
-
-export default config
