@@ -14,6 +14,7 @@ export default function Home() {
         <title>Join Frugal Season - Earn $1,000+/Month Finding Hidden Deals</title>
         <meta name="description" content="Join Frugal Season and learn how to earn an extra $1,000+/month finding hidden deals and price errors. Access exclusive training, mentorship, and a supportive community." />
         <meta name="keywords" content="frugal season, price errors, retail arbitrage, online arbitrage, deals, reselling, make money online" />
+        <link rel="icon" href="/images/FrugalSeasonLogo.jpg" type="image/jpeg" />
         <meta property="og:title" content="Join Frugal Season - Earn $1,000+/Month Finding Hidden Deals" />
         <meta property="og:description" content="Join Frugal Season and learn how to earn an extra $1,000+/month finding hidden deals and price errors. Access exclusive training, mentorship, and a supportive community." />
         <meta property="og:type" content="website" />
@@ -24,33 +25,34 @@ export default function Home() {
         <Header />
         
         {/* Hero Section */}
-        <section className="relative py-12 md:py-16 lg:py-20 overflow-hidden">
+        <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background"></div>
-          <div className="container relative z-10 mx-auto px-4 text-center">
-            <Badge className="mb-4 animate-bounce">
+          <div className="container relative z-10 mx-auto px-3 sm:px-4 text-center">
+            <Badge className="mb-3 sm:mb-4 animate-bounce text-xs sm:text-sm">
               🚀 4.98 Stars (3,234+ Reviews) ⭐️
             </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4">
               Welcome to{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
                 Frugal Season
               </span>
             </h1>
-            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto mb-6 sm:mb-8 px-2">
               Join our elite community of deal hunters and start earning an extra $1,000+/month 
               finding hidden clearance deals, price errors, and retail arbitrage opportunities! 🎯
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-4 sm:mb-6 px-3">
               <Button 
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 w-full sm:w-auto text-sm sm:text-base"
                 asChild
               >
                 <a href="https://whop.com/frugal-szn-1/?a=digitalartlab">
-                  Join Frugal Season Now (Limited Spots) 🚀
+                  Join Frugal Season Now 🚀
                 </a>
               </Button>
               <Button 
                 variant={"outline" as ButtonVariant}
+                className="w-full sm:w-auto text-sm sm:text-base"
                 asChild
               >
                 <a href="#features">
@@ -58,25 +60,25 @@ export default function Home() {
                 </a>
               </Button>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-xs sm:text-sm text-muted-foreground px-2">
               Trusted by 3,000+ members & generating over $25,000,000+ in profits 💰
             </p>
           </div>
         </section>
 
         {/* Success Stories with Videos */}
-        <section className="py-8 md:py-12 bg-muted/50">
-          <div className="container mx-auto px-2 md:px-4">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-3 md:mb-4">
+        <section className="py-6 sm:py-8 md:py-12 bg-muted/50">
+          <div className="container mx-auto px-2 sm:px-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-2 sm:mb-3 md:mb-4">
               Real Results from Our Community
             </h2>
-            <p className="text-base md:text-lg lg:text-xl text-muted-foreground text-center max-w-3xl mx-auto mb-6 md:mb-8">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground text-center max-w-3xl mx-auto mb-4 sm:mb-6 md:mb-8 px-2">
               Watch how our members are finding incredible deals and making serious profits
             </p>
             <VideoCarousel />
-            <div className="text-center mt-8 md:mt-10">
+            <div className="text-center mt-6 sm:mt-8 md:mt-10">
               <Button 
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 w-full sm:w-auto text-sm sm:text-base"
                 asChild
               >
                 <a href="https://whop.com/frugal-szn-1/?a=digitalartlab">
